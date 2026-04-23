@@ -14,7 +14,7 @@ Aquesta skill defineix un protocol de treball estrictament controlat per l'usuar
 3. **PROTECCIÓ DEL PREÀMBUL:** El preàmbul (fitxers `*.tex` de configuració o seccions de configuració en `main.tex`) NO ES TOCA a menys que es demani explícitament. L'agent ha de tractar el preàmbul com a "només lectura" per defecte.
 4. **ANÀLISI ESTRUCTURAL OBLIGATORI:** Abans de començar a fer canvis, l'agent ha d'entendre l'estructura del document (quines macros, entorns, colors i paquets estan disponibles) per assegurar-se que les noves aportacions siguin coherents i utilitzin els elements ja definits.
 5. **PROTOCOL DE VALIDACIÓ (TODO):** Per a canvis estructurals o de contingut importants (especialment si afecten diverses àrees o fitxers del projecte), l'agent ha de generar una llista de tasques (TODO) i esperar la validació explícita de l'usuari abans d'executar-les.
-6. **MODE PLANIFICACIÓ PER CANVIS O DE CONTINGUTS IMPOSTANTS:** Si els canvis impliquen modificar moltes estructures, elements o parts del document, hauràs d'activar el mode planificació, planificar els teus moviment i canvis en funció del que t'hagui demanat i de tot el que estigui implicat en aquest, i demanar la meva autorització un cop em presentis aquest pla.
+6. **MODE PLANIFICACIÓ PER CANVIS O DE CONTINGUTS IMPOSTANTS:** Si els canvis impliquen modificar moltes estructures, elements o parts del document, hauràs d'activar el mode planificació, planificar els teus moviment i canvis en funció del que t'hagui demanat i de tot el que estigui implicat en aquest, i demanr la meva autorització un cop em presentis aquest pla.
 
 ## Regles d'Estil del Projecte (Específiques)
 
@@ -48,4 +48,5 @@ Aquestes regles s'apliquen al treball "La comunicació a través dels sentits":
 1. **Recerca:** Llistar fitxers del projecte i llegir els fitxers de preàmbul (`preamble.tex`, `config.tex`, etc.) i el fitxer principal (`main.tex`).
 2. **Estratègia:** Si la tasca és complexa, presentar un TODO detallat a l'usuari.
 3. **Execució:** Realitzar canvis quirúrgics (`replace`) en lloc de sobreescriure fitxers complets (`write_file`) per minimitzar l'impacte en el codi original.
+4. **Compilació:** Abans de donar per finalitzada una tasca del document, compilaràs el codi en un PDF, i si mostra errors greus de compilació t'asseguraras d'instalar depèndencies o buscar per internet la solució a aquests, PREVAL mantenir les estructures, fonst i elements per sobre d'ELIMINAR-LOS, és a dir: no intentis arreglar els errors eliminant elements, paquests o estructures, busca la manera de preservar-los.
 4. **Validació:** Confirmar amb l'usuari que el canvi és exactament el que buscava.

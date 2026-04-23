@@ -1,5 +1,9 @@
 # Projecte de Recerca: La comunicació a través dels sentits
 
+## Com treballem?
+Quan hagis de fer modificacions sobre el meu projecte ho faràs sempre seguint les indicacions de la SKILL que hem elaborat perquè treballis de la manera adequada
+**UBICACIÓ SKILL:** /workspaces/treball-de-recerca/Skills/SKILL.md
+
 ## 📄 Descripció del Projecte
 Aquest Treball de Recerca (TDR) de Batxillerat explora el **disseny i la utilitat d'una taula sensorial** com a eina de suport per a persones amb dificultats comunicatives. L'enfocament és multidisciplinari, integrant conceptes de logopèdia, educació especial i inclusió, amb l'objectiu de millorar l'autonomia i la qualitat de vida dels usuaris mitjançant l'estimulació multisensorial i la Comunicació Augmentativa i Alternativa (CAA).
 
