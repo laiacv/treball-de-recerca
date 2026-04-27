@@ -168,28 +168,29 @@
 \end{titlepage}
 
 % --- ÍNDEX (Opcional però recomanat) ---
+\pagenumbering{roman}
 \tableofcontents
 \newpage
 
 \pagenumbering{arabic}
+\setcounter{page}{1}
+\hypersetup{pageanchor=true}
+\newpage
+\input{capitols/introduccio}
 
 \newpage
-\input{introduccio}
+\input{capitols/marc_teoric}
 
 \newpage
-\input{marc_teoric}
+\input{capitols/objectius_i_hipotesi}
 
 \newpage
-\input{objectius_i_hipotesi}
+\input{capitols/metodologia}
 
 \newpage
-\input{metodologia}
+\input{capitols/conclusions}
 
 \newpage
-\input{conclusions}
-
-\newpage
-\input{bibliografia}
-
+\input{capitols/bibliografia}
 \end{document}
 
