@@ -1,21 +1,22 @@
 \babel@toc {catalan}{}\relax 
 \contentsline {chapter}{\numberline {1}Introducció i Motivació}{1}{chapter.1}%
-\contentsline {section}{Motius de la tria}{1}{section*.2}%
-\contentsline {section}{Orientació del treball}{1}{section*.3}%
-\contentsline {section}{Altres consideracions}{1}{section*.4}%
-\contentsline {chapter}{\numberline {2}Marc Teòric}{2}{chapter.2}%
-\contentsline {section}{Comunicació}{2}{section*.5}%
-\contentsline {subsection}{Verbal}{2}{subsection*.6}%
-\contentsline {subsection}{No verbal}{2}{subsection*.7}%
-\contentsline {subsection}{Comunicació Augmentativa i Alternativa (CAA)}{2}{subsection*.8}%
-\contentsline {subsubsection}{CAA Sense Ajuda (No assistida)}{2}{subsubsection*.9}%
-\contentsline {subsubsection}{CAA Amb Ajuda (Assistida):}{2}{subsubsection*.10}%
-\contentsline {section}{Sistemes de suport}{2}{section*.11}%
-\contentsline {section}{Integració sensorial}{3}{section*.12}%
-\contentsline {section}{Dificultats comunicatives}{3}{section*.13}%
-\contentsline {chapter}{\numberline {3}Objectius i Hipòtesi}{4}{chapter.3}%
-\contentsline {section}{Objectius}{4}{section*.14}%
-\contentsline {section}{Hipòtesi (Preguntes inicials)}{4}{section*.15}%
-\contentsline {chapter}{\numberline {4}Metodologia}{5}{chapter.4}%
-\contentsline {chapter}{\numberline {5}Conclusions}{6}{chapter.5}%
-\contentsline {chapter}{Bibliografia i Webgrafia}{7}{chapter*.16}%
+\contentsline {section}{Motius de la tria}{1}{section*.3}%
+\contentsline {section}{Orientació del treball}{1}{section*.4}%
+\contentsline {section}{Altres consideracions}{2}{section*.5}%
+\contentsline {chapter}{\numberline {2}Marc Teòric}{3}{chapter.2}%
+\contentsline {section}{Comunicació}{3}{section*.6}%
+\contentsline {subsection}{Verbal}{3}{subsection*.7}%
+\contentsline {subsection}{No verbal}{3}{subsection*.8}%
+\contentsline {subsection}{Comunicació Augmentativa i Alternativa (CAA)}{3}{subsection*.9}%
+\contentsline {subsubsection}{CAA Sense Ajuda (No assistida)}{3}{subsubsection*.10}%
+\contentsline {subsubsection}{CAA Amb Ajuda (Assistida):}{4}{subsubsection*.11}%
+\contentsline {section}{Sistemes de suport}{4}{section*.12}%
+\contentsline {section}{Integració sensorial}{4}{section*.13}%
+\contentsline {section}{Dificultats comunicatives}{4}{section*.14}%
+\contentsline {chapter}{\numberline {3}Objectius i Hipòtesi}{5}{chapter.3}%
+\contentsline {section}{Objectius}{5}{section*.15}%
+\contentsline {section}{Hipòtesi (Preguntes inicials)}{5}{section*.16}%
+\contentsline {chapter}{\numberline {4}Metodologia}{6}{chapter.4}%
+\contentsline {section}{Fases del procés}{6}{section*.17}%
+\contentsline {chapter}{\numberline {5}Conclusions}{8}{chapter.5}%
+\contentsline {chapter}{Bibliografia i Webgrafia}{9}{chapter*.18}%

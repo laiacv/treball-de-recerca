@@ -1,4 +1,4 @@
-\documentclass[12pt,a4paper,oneside]{report}
+\documentclass[12pt,a4paper,oneside]{article}
 
 % --- Paquets bàsics ---
 \usepackage[utf8]{inputenc}
@@ -7,190 +7,150 @@
 \babelprovide[main, import]{catalan}
 \usepackage{graphicx}
 \usepackage{geometry}
-\geometry{margin=2.5cm}
+\geometry{a4paper, margin=2.5cm}
 \usepackage{setspace}
-\onehalfspacing 
+\setstretch{1.3}
 
 % --- Tipografia Moderna ---
-% Utilitzem Source Sans Pro (Sans Serif) per a tot el document tal com indica la SKILL
 \usepackage[default]{sourcesanspro}
-\usepackage[T1]{fontenc}
 \renewcommand{\familydefault}{\sfdefault}
+\usepackage{microtype} 
 
 % --- Disseny i Colors ---
 \usepackage[dvipsnames, table]{xcolor}
 \usepackage{listings}
 \usepackage{tcolorbox}
+\tcbuselibrary{skins} 
 \usepackage{titlesec}
 \usepackage{enumitem}
+\usepackage{tikz} 
+\usetikzlibrary{shapes.geometric, arrows, positioning, shadows}
 
 % --- DEFINICIÓ DE COLORS ---
-\definecolor{codebackground}{rgb}{0.95, 0.95, 0.92}
-\definecolor{codegray}{rgb}{0.5, 0.5, 0.5}
-\definecolor{codeblue}{rgb}{0.13, 0.13, 1}
-\definecolor{codepurple}{rgb}{0.58, 0, 0.82}
-
-% --- CONFIGURACIÓ DE LSTSET ---
-\lstset{
-    backgroundcolor=\color{codebackground},
-    commentstyle=\color{codegray},
-    keywordstyle=\color{codeblue}\bfseries,
-    numberstyle=\tiny\color{codegray},
-    stringstyle=\color{red},
-    basicstyle=\ttfamily\footnotesize,
-    breakatwhitespace=false,
-    breaklines=true,
-    captionpos=b,
-    keepspaces=true,
-    numbers=left,
-    numbersep=5pt,
-    showspaces=false,
-    showstringspaces=false,
-    showtabs=false,
-    tabsize=2,
-    frame=single,
-    rulecolor=\color{lightgray},
-    xleftmargin=10pt
-}
+\definecolor{MainBlue}{HTML}{003366}
 
 % Configurem hyperref perquè els enllaços tinguin color i no recuadres lletjos
 \usepackage[colorlinks=true, linkcolor=MidnightBlue, urlcolor=TealBlue, citecolor=RoyalBlue]{hyperref} 
 
+% --- Disseny de l'Índex ---
+\usepackage{tocloft}
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}} 
+\renewcommand{\cftsecfont}{\bfseries\color{MidnightBlue}} 
+\renewcommand{\cftsubsecfont}{\small\color{RoyalBlue}} 
+\setlength{\cftbeforesecskip}{8pt} 
+
 % --- Capçaleres i Peus de pàgina ---
 \usepackage{fancyhdr}
-\setlength{\headheight}{25pt} % Afegeix aquesta línia!
+\setlength{\headheight}{25pt}
 \pagestyle{fancy}
-\fancyhf{} % Neteja la configuració per defecte de LaTeX
-
-% Personalització de la línia de la capçalera (color Blau per anar a joc)
+\fancyhf{} 
 \renewcommand{\headrulewidth}{0.6pt}
 \renewcommand{\headrule}{\hbox to\headwidth{\color{MidnightBlue}\leaders\hrule height \headrulewidth\hfill}}
-
-% Contingut de la capçalera
-% [L] Esquerra: Nom i Institut
-\fancyhead[L]{\small\color{gray} Laia Cabrera Vallejos | Institut Escola Sant Pol de Mar} 
-% [R] Dreta: Títol del CAPÍTOL actual (utilitzem \leftmark)
+\fancyhead[L]{\small\color{gray} Laia Cabrera Vallejos} 
 \fancyhead[R]{\small\color{MidnightBlue} \nouppercase{\leftmark}} 
+\fancyfoot[R]{\thepage}
 
-% --- NOU: Forçar la capçalera a totes les pàgines (inclosos inicis de capítol) ---
-\makeatletter
-\let\ps@plain\ps@fancy
-\makeatother
+% --- Configuració de peus de figura ---
+\usepackage[labelfont=bf, font=small, skip=10pt]{caption}
 
-% Contingut del peu de pàgina
-% [C] Centre: Número de pàgina
-\fancyfoot[C]{\thepage}
+% --- Elements Gràfics Addicionals ---
+\usepackage{booktabs} 
+\usepackage{pifont} 
+\newcommand{\cmark}{\ding{51}}%
+\newcommand{\xmark}{\ding{55}}%
 
-% --- Correcció per a títols sense número ---
-% Ens assegurem que agafi només el nom net del capítol
-\makeatletter
-\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
-\renewcommand{\sectionmark}[1]{\markright{#1}}
-\makeatother
-
-% --- Configuració de Jerarquia (Sense números) ---
-% Aquesta comanda amaga els números (1, 1.1, 1.1.1...) a tot el document
-\setcounter{secnumdepth}{0} 
-
-% --- Configuració de Títols (Colors i Indentació) ---
-
-% CAPÍTOL (Nivell 1): Blau fosc (MidnightBlue), lletra enorme, sense indentació.
-\titleformat{\chapter}[block]
-  {\normalfont\Huge\bfseries\color{MidnightBlue}}{}{0pt}{}
-\titlespacing*{\chapter}{0pt}{-20pt}{30pt}
-
-% SECCIÓ (Nivell 2): Blau reial (RoyalBlue), lletra gran, indentació lleugera (0.5 cm).
+% --- Maquetació de Títols ---
 \titleformat{\section}[block]
-  {\normalfont\Large\bfseries\color{RoyalBlue}}{}{0pt}{}
-\titlespacing*{\section}{0cm}{18pt}{10pt}
+  {\normalfont\Huge\bfseries\color{MidnightBlue}}{}{0pt}{}
+\titlespacing*{\section}{0pt}{10pt}{20pt}
 
-% SUBSECCIÓ (Nivell 3): Blau verdós (TealBlue), lletra mitjana, indentació mitjana (1 cm).
 \titleformat{\subsection}[block]
-  {\normalfont\large\bfseries\color{TealBlue}}{}{0pt}{}
-\titlespacing*{\subsection}{0cm}{14pt}{8pt}
+  {\normalfont\Large\bfseries\color{RoyalBlue}}{}{0pt}{}
+\titlespacing*{\subsection}{0cm}{18pt}{10pt}
 
-% SUBSUBSECCIÓ (Nivell 4): Blau grisós (CadetBlue), mida text, indentació profunda (1.5 cm).
-\titleformat{\subsubsection}[block]
-  {\normalfont\normalsize\bfseries\color{CadetBlue}}{}{0pt}{}
-\titlespacing*{\subsubsection}{0.5cm}{10pt}{5pt}
+% --- Comanda per a salts de pàgina intel·ligents (Regla del 75%) ---
+\usepackage{needspace}
+\newcommand{\apartat}[1]{\needspace{0.25\textheight}\section{#1}}
 
 % ---------------------------------------------------------
 % INICI DEL DOCUMENT
 % ---------------------------------------------------------
 \begin{document}
 
-% --- PORTADA ---
+% --- PORTADA FINAL (GARANTIA PÀGINA ÚNICA) ---
 \begin{titlepage}
+    \begin{tikzpicture}[remember picture,overlay]
+        % Marc blau exterior
+        \draw[line width=1.5pt, color=MidnightBlue] 
+            ([xshift=0.8cm,yshift=-0.8cm]current page.north west) 
+            rectangle 
+            ([xshift=-0.8cm,yshift=0.8cm]current page.south east);
+            
+        % Logo a la cantonada superior dreta
+        \node[anchor=north east, xshift=-1.2cm, yshift=-1.2cm] at (current page.north east) 
+            {\includegraphics[width=2.1cm]{imatges/logo_intitut.png}};
+            
+        % Text Institut a dalt a l'esquerra
+        \node[anchor=north west, xshift=1.2cm, yshift=-1.5cm] at (current page.north west) 
+            {\small \textbf{INSTITUT ESCOLA SANT POL DE MAR}};
+    \end{tikzpicture}
+
     \centering
-    \begin{tcolorbox}[colback=white, colframe=NavyBlue, arc=0pt, outer arc=0pt, height=24.5cm, boxrule=2pt]
-        
-        \vspace{1cm}
-        {\Large \textbf{Institut Escola Sant Pol de Mar}} \\[2.5cm]
-        
-        % TÍTOL
-        {\Huge \textbf{La comunicació a través dels sentits}} \\[0.8cm]
-        {\Large \textit{Disseny i utilitat d'una taula sensorial per a persones amb dificultats comunicatives}} \\[0.5cm]
-        
-        % IMATGE A SOTA DEL TÍTOL
-        \begin{center}
-            % Quan tinguis la imatge real, pots substituir el tcolorbox d'abaix per:
-            % \includegraphics[width=10cm]{nom_imatge.jpg} o .png
-            \begin{tcolorbox}[colback=gray!5, colframe=gray!20, width=10cm, height=6cm, halign=center, valign=center]
-                \textcolor{gray!50}{\textit{Espai per a la imatge central}}
-            \end{tcolorbox}
-        \end{center}
-        
-        \vspace{1cm}
-        
-        \textbf{\large Treball de Recerca de Batxillerat} \\[1.5cm]
-        
-        % LOGOTIP A L'ESQUERRA I DADES A LA DRETA
-        \begin{minipage}[b]{0.45\textwidth}
-            \begin{flushleft}
-                % Quan tinguis el logotip, pots substituir el tcolorbox per:
-                % \includegraphics[width=4cm]{nom_logo.png}
-                \begin{tcolorbox}[colback=gray!5, colframe=gray!20, width=5cm, height=3.5cm, halign=center, valign=center]
-                    \textcolor{gray!50}{\textit{Espai per al logotip}}
-                \end{tcolorbox}
-            \end{flushleft}
-        \end{minipage}
-        \hfill
-        \begin{minipage}[b]{0.45\textwidth}
-            \begin{flushright}
-                \large
-                \textbf{Autora:} Laia Cabrera Vallejos \\
-                \textbf{Tutor:} Enric Abadal Maestro \\
-                \textbf{Curs:} 2025-2026
-            \end{flushright}
-        \end{minipage}
-        \vspace*{0.5cm} % Petit marge inferior dins la caixa blava
+    \vspace*{3.5cm}
+
+    \begin{tcolorbox}[colback=white, colframe=MidnightBlue, arc=5pt, boxrule=1.5pt, left=1cm, right=1cm, top=1cm, bottom=1cm, shadow={4pt}{-4pt}{0pt}{black!15}]
+        \centering
+        {\Huge \textbf{\color{MidnightBlue} LA COMUNICACIÓ A TRAVÉS\\ DELS SENTITS}} \par
+        \vspace{0.6cm}
+        {\Large \textit{Disseny i utilitat d'una taula sensorial per a persones amb dificultats comunicatives}}
     \end{tcolorbox}
+
+    \vspace{1.5cm}
+    \begin{tcolorbox}[colback=white, colframe=gray!5, arc=15pt, width=12cm, boxrule=0.2pt, halign=center, shadow={2pt}{-2pt}{0pt}{black!5}]
+        \centering
+        \includegraphics[width=11.5cm]{imatges/dibuix_que-representa-un-grup-de-presonse-comunicant-se-i-expresant-les-seves-idees-parlant-i-atraves-d'esquemes.png}
+    \end{tcolorbox}
+
+    \vfill
+
+    \begin{minipage}{0.8\textwidth}
+        \centering
+        \textbf{\large Treball de Recerca de Batxillerat} \\
+        \textsf{Curs 2025-2026}
+    \end{minipage}
+
+    \vspace{1.2cm}
+
+    \begin{minipage}[t]{0.4\textwidth}
+        \begin{flushleft} 
+            \textsc{Autora:}\\
+            \textbf{Laia Cabrera Vallejos}
+        \end{flushleft}
+    \end{minipage}
+    \begin{minipage}[t]{0.4\textwidth}
+        \begin{flushright}
+            \textsc{Tutor:}\\
+            \textbf{Enric Abadal Maestro}
+        \end{flushright}
+    \end{minipage}
+
+    \vspace{0.3cm}
 \end{titlepage}
 
-% --- ÍNDEX (Opcional però recomanat) ---
-\pagenumbering{roman}
-\tableofcontents
+% --- ÍNDEX ---
+\pagenumbering{Alph}
+\hypersetup{pageanchor=false}
+{\color{MidnightBlue}\tableofcontents}
 \newpage
-
 \pagenumbering{arabic}
 \setcounter{page}{1}
 \hypersetup{pageanchor=true}
-\newpage
+
 \input{capitols/introduccio}
-
-\newpage
-\input{capitols/marc_teoric}
-
-\newpage
 \input{capitols/objectius_i_hipotesi}
-
-\newpage
+\input{capitols/marc_teoric}
 \input{capitols/metodologia}
-
-\newpage
 \input{capitols/conclusions}
-
-\newpage
 \input{capitols/bibliografia}
-\end{document}
 
+\end{document}
